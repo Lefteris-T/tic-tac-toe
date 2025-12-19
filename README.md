@@ -21,3 +21,4 @@ A simple Tic Tac Toe game built with **HTML, CSS, and JavaScript** — deployed 
 - The game checks for a winner after each move and highlights the winning line.
 
 ## 📁 Project Structure
+├── index.html ├── style.css ├── tic-tac.js └── assets └── bg.png
