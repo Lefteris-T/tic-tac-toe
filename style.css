@@ -1,1 +1,110 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #eef2ff;
+  background: radial-gradient(1200px 800px at 20% 20%, #2b2a7a 0%, transparent 60%),
+              radial-gradient(1000px 700px at 80% 30%, #7a2a6a 0%, transparent 55%),
+              #0b1020;
+}
+
+.container {
+  width: min(520px, 92vw);
+  padding: 24px 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+  letter-spacing: 0.5px;
+}
+
+#status {
+  margin: 6px 0 14px;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+#reset {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.10);
+  color: #eef2ff;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+#reset:hover { transform: translateY(-1px); background: rgba(255,255,255,0.14); }
+#reset:active { transform: translateY(0px); }
+
+.row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.row + .row { margin-top: 12px; }
+
+/* Cells */
+.col {
+  width: 110px;
+  height: 110px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.10);
+
+  font-size: 54px;
+  font-weight: 800;
+  user-select: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.col:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.26);
+}
+
+.col:active { transform: translateY(0px) scale(0.99); }
+
+/* If you still keep border-r/border-b classes in HTML, neutralize them */
+.border-r, .border-b { border: none; }
+
+/* Winner highlight */
+.winner {
+  outline: 2px solid rgba(120, 200, 255, 0.85);
+  box-shadow: 0 0 0 4px rgba(120, 200, 255, 0.15), 0 16px 35px rgba(0,0,0,0.25);
+  animation: pop 0.18s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(0.98); }
+  to   { transform: scale(1); }
+}
+
+/* Optional: different colors for X / O  */
+.col.x { color: #7dd3fc; }  /* X */
+.col.o { color: #fda4af; }  /* O */
+
+/* Mobile */
+@media (max-width: 420px) {
+  .col { width: 92px; height: 92px; font-size: 46px; }
+}
+
 
